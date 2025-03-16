@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 14:03:46 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/16 14:58:01 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/03/16 22:21:27 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ typedef struct s_stack
 	int		size;
 	t_num	*topnum;
 }	t_stack;
+
+int	ft_checkstack(char **list);
 
 #endif
