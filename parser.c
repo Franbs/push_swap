@@ -50,15 +50,27 @@ int	ft_checkdup(char **list)
 int	ft_checkstack(char **list)
 {
 	size_t	i;
-	
+
 	i = 1;
 	while (list[i])
 	{
 		if (ft_checknum(list[i]) == 1)
 			return (1);
-		if (ft_checkdup(list) == 1)
-			return (1);
 		i++;
 	}
+	if (ft_checkdup(list) == 1)
+		return (1);
 	return (0);
+}
+
+void	ft_fillstack(t_stack *stack, char **av)
+{
+	size_t	i;
+
+	i = 1;
+	while (av[i])
+	{
+		ft_pushtostack(stack, ft_atoi(av[i]));
+		i++;
+	}
 }

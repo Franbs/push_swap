@@ -3,11 +3,11 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbanzo-s <fbanzo-s@student.42barcelon      +#+  +:+       +#+        */
+/*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 14:58:52 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/16 14:58:54 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/03/17 14:10:25 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include "push_swap.h"
