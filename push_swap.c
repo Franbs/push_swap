@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 14:03:37 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/17 15:58:46 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/03/17 16:03:04 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	main(int ac, char **av)
 
 	if (ac < 2)
 		return (0);
-	//ft_printparams(av);
 	error = ft_checkstack(av);
 	if (error == 1)
 	{
