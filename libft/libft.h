@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdio.h>
+# include "../push_swap.h"
 
 typedef struct s_list
 {

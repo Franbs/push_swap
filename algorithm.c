@@ -6,8 +6,14 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 14:08:18 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/17 14:10:35 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/03/19 19:41:49 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_sort(t_stack *stacka)
+{
+	ft_sa(stacka);
+	ft_ra(stacka);
+}

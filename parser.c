@@ -32,7 +32,7 @@ int	ft_checkdup(char **list)
 	size_t	i;
 	size_t	j;
 
-	i = 1;
+	i = 0;
 	while (list[i])
 	{
 		j = i + 1;
@@ -51,7 +51,7 @@ int	ft_checkstack(char **list)
 {
 	size_t	i;
 
-	i = 1;
+	i = 0;
 	while (list[i])
 	{
 		if (ft_checknum(list[i]) == 1)
@@ -67,7 +67,7 @@ void	ft_fillstack(t_stack *stack, char **av)
 {
 	size_t	i;
 
-	i = 1;
+	i = 0;
 	while (av[i])
 	{
 		ft_pushtostack(stack, ft_atoi(av[i]));
