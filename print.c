@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 13:34:24 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/22 13:53:32 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/03/22 14:11:38 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_printstack(t_stack *stack)
 	}
 }
 
-void	ft_printbothstacks(t_stack *stacka, t_stack *stackb)
+void	ft_printstacks(t_stack *stacka, t_stack *stackb)
 {
 	ft_putstr_fd("stack A:\n", 1);
 	ft_printstack(stacka);

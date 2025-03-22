@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 14:08:48 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/19 19:46:58 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/03/22 14:14:16 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ t_num	*ft_getlastnum(t_stack *stack)
 	t_num	*botnum;
 
 	if (!stack || !stack->topnum)
-        return (NULL);
+		return (NULL);
 	botnum = stack->topnum;
 	while (botnum->next)
 	{

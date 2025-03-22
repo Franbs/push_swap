@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 14:58:52 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/22 13:07:52 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/03/22 14:13:40 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	ft_reverserotate(t_stack *stack)
 
 	if (!stack || !stack->topnum || !stack->topnum->next)
 		return ;
-
 	botnum = stack->topnum;
 	tmp = NULL;
 	while (botnum->next)
@@ -61,17 +60,16 @@ void	ft_reverserotate(t_stack *stack)
 	stack->topnum = botnum;
 }
 
-void	ft_push(t_stack *stacktoget, t_stack *stacktopush)
+void	ft_push(t_stack *stack_toget, t_stack *stack_topush)
 {
-	t_num	*nodetopush;
+	t_num	*node_topush;
 
-	if (!stacktoget || !stacktoget->topnum || !stacktopush)
+	if (!stack_toget || !stack_toget->topnum || !stack_topush)
 		return ;
-
-	nodetopush = stacktoget->topnum;
-	stacktoget->topnum = nodetopush->next;
-	nodetopush->next = stacktopush->topnum;
-	stacktopush->topnum = nodetopush;
-	stacktoget->size--;
-	stacktopush->size++;
+	node_topush = stack_toget->topnum;
+	stack_toget->topnum = node_topush->next;
+	node_topush->next = stack_topush->topnum;
+	stack_topush->topnum = node_topush;
+	stack_toget->size--;
+	stack_topush->size++;
 }

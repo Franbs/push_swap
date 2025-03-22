@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 14:03:46 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/22 13:49:59 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/03/22 14:11:19 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_freearray(char **av2);
 // print.c
 void	ft_printparams(char **av);
 void	ft_printstack(t_stack *stack);
-void	ft_printbothstacks(t_stack *stacka, t_stack *stackb);
+void	ft_printstacks(t_stack *stacka, t_stack *stackb);
 
 // node.c
 t_num	*ft_createnode(int val);
