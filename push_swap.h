@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 14:03:46 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/19 19:47:16 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/03/22 13:49:59 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,15 @@ int		ft_checkstack(char **list);
 void	ft_fillstack(t_stack *stack, char **av);
 
 // utils.c
-//void	ft_printparams(char **av);
-void	ft_printstack(t_stack *stack);
 void	ft_error(int error);
 char	**ft_handleav(char **av, int ac);
-void	ft_free(int ac, char **av2, t_stack *stacka);
+void	ft_free(int ac, char **av2, t_stack *stacka, t_stack *stackb);
 void	ft_freearray(char **av2);
+
+// print.c
+void	ft_printparams(char **av);
+void	ft_printstack(t_stack *stack);
+void	ft_printbothstacks(t_stack *stacka, t_stack *stackb);
 
 // node.c
 t_num	*ft_createnode(int val);
@@ -51,9 +54,17 @@ void	ft_freestack(t_stack *stack);
 t_num	*ft_getlastnum(t_stack *stack);
 
 // algorithm.c
-void	ft_sort(t_stack *stacka);
+void	ft_sort(t_stack *stacka, t_stack *stackb);
 
 // operations.c
-void	ft_sa(t_stack *stack);
+void	ft_swap(t_stack *stack);
+void	ft_rotate(t_stack *stack);
+void	ft_reverserotate(t_stack *stack);
+void	ft_push(t_stack *stacktoget, t_stack *stacktopush);
+
+// operations2.c
+void	ft_ss(t_stack *stacka, t_stack *stackb);
+void	ft_rr(t_stack *stacka, t_stack *stackb);
+void	ft_rrr(t_stack *stacka, t_stack *stackb);
 
 #endif

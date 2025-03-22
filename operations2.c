@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   operations2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/16 14:03:37 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/22 13:54:05 by fbanzo-s         ###   ########.fr       */
+/*   Created: 2025/03/22 13:13:14 by fbanzo-s          #+#    #+#             */
+/*   Updated: 2025/03/22 13:30:29 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+void	ft_ss(t_stack *stacka, t_stack *stackb)
 {
-	int		error;
-	t_stack	*stacka;
-	t_stack	*stackb;
-	char	**av2;
+	ft_swap(stacka);
+	ft_swap(stackb);
+}
 
-	if (ac < 2)
-		return (0);
-	av2 = ft_handleav(av, ac);
-	error = ft_checkstack(av2);
-	ft_error(error);
-	stacka = ft_createstack();
-	stackb = ft_createstack();
-	ft_fillstack(stacka, av2);
-	ft_sort(stacka, stackb);
-	ft_free(ac, av2, stacka, stackb);
-	return (0);
+void	ft_rr(t_stack *stacka, t_stack *stackb)
+{
+	ft_rotate(stacka);
+	ft_rotate(stackb);
+}
+
+void	ft_rrr(t_stack *stacka, t_stack *stackb)
+{
+	ft_reverserotate(stacka);
+	ft_reverserotate(stackb);
 }
