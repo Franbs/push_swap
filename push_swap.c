@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 14:03:37 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/22 13:54:05 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/03/25 12:25:06 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ int	main(int ac, char **av)
 	stacka = ft_createstack();
 	stackb = ft_createstack();
 	ft_fillstack(stacka, av2);
-	ft_sort(stacka, stackb);
+	if (ft_checksorted(stacka) == 1)
+		ft_sort(stacka, stackb);
 	ft_free(ac, av2, stacka, stackb);
 	return (0);
 }

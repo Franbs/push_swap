@@ -6,7 +6,7 @@
 #    By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/16 12:36:38 by fbanzo-s          #+#    #+#              #
-#    Updated: 2025/03/22 14:18:51 by fbanzo-s         ###   ########.fr        #
+#    Updated: 2025/03/25 13:36:22 by fbanzo-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ CFLAGS = -Wall -Wextra -Werror
 LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-SRC = push_swap.c parser.c operations.c operations2.c utils.c node.c stack.c algorithm.c print.c
+SRC = push_swap.c parser.c operations.c operations2.c utils.c \
+node.c stack.c algorithm.c print.c utils_sorted.c
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
