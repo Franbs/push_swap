@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 14:58:52 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/22 14:13:40 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:38:27 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_swap(t_stack *stack)
 	firstnode->next = secondnode->next;
 	secondnode->next = firstnode;
 	stack->topnum = secondnode;
+	ft_putstr_fd("s\n", 1);
 }
 
 void	ft_rotate(t_stack *stack)
@@ -38,6 +39,7 @@ void	ft_rotate(t_stack *stack)
 	stack->topnum = firstnode->next;
 	firstnode->next = NULL;
 	lastnode->next = firstnode;
+	ft_putstr_fd("r\n", 1);
 }
 
 void	ft_reverserotate(t_stack *stack)
@@ -58,6 +60,7 @@ void	ft_reverserotate(t_stack *stack)
 		tmp->next = NULL;
 	botnum->next = stack->topnum;
 	stack->topnum = botnum;
+	ft_putstr_fd("rr\n", 1);
 }
 
 void	ft_push(t_stack *stack_toget, t_stack *stack_topush)
@@ -72,4 +75,5 @@ void	ft_push(t_stack *stack_toget, t_stack *stack_topush)
 	stack_topush->topnum = node_topush;
 	stack_toget->size--;
 	stack_topush->size++;
+	ft_putstr_fd("p\n", 1);
 }

@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 14:08:48 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/25 14:06:52 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:55:12 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,35 +55,4 @@ void	ft_freestack(t_stack *stack)
 		topnode = tmpnext;
 	}
 	free(stack);
-}
-
-t_num	*ft_getlastnum(t_stack *stack)
-{
-	t_num	*botnum;
-
-	if (!stack || !stack->topnum)
-		return (NULL);
-	botnum = stack->topnum;
-	while (botnum->next)
-	{
-		botnum = botnum->next;
-	}
-	return (botnum);
-}
-
-t_num	*ft_min(t_stack *stack)
-{
-	t_num	*num;
-	t_num	*min;
-
-	num = stack->topnum;
-	while (num)
-	{
-		if (num->next != NULL && min->value > num->next->value)
-		{
-			min = num->next;
-		}
-		num = num->next;
-	}
-	return (min);
 }

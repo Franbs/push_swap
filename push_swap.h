@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 14:03:46 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/25 14:07:17 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/03/25 17:06:04 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,18 @@ void	ft_freenode(t_num *node);
 t_stack	*ft_createstack(void);
 void	ft_pushtostack(t_stack *stack, int val);
 void	ft_freestack(t_stack *stack);
+
+// stack_utils.c
 t_num	*ft_getlastnum(t_stack *stack);
 t_num	*ft_min(t_stack *stack);
+t_num	*ft_max(t_stack *stack);
+int		ft_getpos(t_num *num, t_stack *stack);
 
 // utils_sorted.c
 void	ft_sortindex(t_stack *stacka);
 int		ft_checksorted(t_stack *a);
 void	ft_sortthree(t_stack *stacka);
+void	ft_sortfour(t_stack *stacka, t_stack *stackb);
 
 // algorithm.c
 void	ft_sort(t_stack *stacka, t_stack *stackb);
