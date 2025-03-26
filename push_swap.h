@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 14:03:46 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/25 17:06:04 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/03/26 13:48:26 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,15 +63,16 @@ void	ft_sortindex(t_stack *stacka);
 int		ft_checksorted(t_stack *a);
 void	ft_sortthree(t_stack *stacka);
 void	ft_sortfour(t_stack *stacka, t_stack *stackb);
+void	ft_sortfive(t_stack *stacka, t_stack *stackb);
 
 // algorithm.c
 void	ft_sort(t_stack *stacka, t_stack *stackb);
 
 // operations.c
-void	ft_swap(t_stack *stack);
-void	ft_rotate(t_stack *stack);
-void	ft_reverserotate(t_stack *stack);
-void	ft_push(t_stack *stacktoget, t_stack *stacktopush);
+void	ft_swap(t_stack *stack, char name);
+void	ft_rotate(t_stack *stack, char name);
+void	ft_reverserotate(t_stack *stack, char name);
+void	ft_push(t_stack *stacktoget, t_stack *stacktopush, char name);
 
 // operations2.c
 void	ft_ss(t_stack *stacka, t_stack *stackb);

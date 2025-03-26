@@ -6,13 +6,13 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 14:58:52 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/25 16:38:27 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/03/26 13:48:19 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swap(t_stack *stack)
+void	ft_swap(t_stack *stack, char name)
 {
 	t_num	*firstnode;
 	t_num	*secondnode;
@@ -24,10 +24,13 @@ void	ft_swap(t_stack *stack)
 	firstnode->next = secondnode->next;
 	secondnode->next = firstnode;
 	stack->topnum = secondnode;
-	ft_putstr_fd("s\n", 1);
+	if (name == 'a')
+		ft_putstr_fd("sa\n", 1);
+	else if (name == 'b')
+		ft_putstr_fd("sb\n", 1);
 }
 
-void	ft_rotate(t_stack *stack)
+void	ft_rotate(t_stack *stack, char name)
 {
 	t_num	*firstnode;
 	t_num	*lastnode;
@@ -39,10 +42,13 @@ void	ft_rotate(t_stack *stack)
 	stack->topnum = firstnode->next;
 	firstnode->next = NULL;
 	lastnode->next = firstnode;
-	ft_putstr_fd("r\n", 1);
+	if (name == 'a')
+		ft_putstr_fd("ra\n", 1);
+	else if (name == 'b')
+		ft_putstr_fd("rb\n", 1);
 }
 
-void	ft_reverserotate(t_stack *stack)
+void	ft_reverserotate(t_stack *stack, char name)
 {
 	t_num	*botnum;
 	t_num	*tmp;
@@ -60,10 +66,13 @@ void	ft_reverserotate(t_stack *stack)
 		tmp->next = NULL;
 	botnum->next = stack->topnum;
 	stack->topnum = botnum;
-	ft_putstr_fd("rr\n", 1);
+	if (name == 'a')
+		ft_putstr_fd("rra\n", 1);
+	else if (name == 'b')
+		ft_putstr_fd("rrb\n", 1);
 }
 
-void	ft_push(t_stack *stack_toget, t_stack *stack_topush)
+void	ft_push(t_stack *stack_toget, t_stack *stack_topush, char name)
 {
 	t_num	*node_topush;
 
@@ -75,5 +84,8 @@ void	ft_push(t_stack *stack_toget, t_stack *stack_topush)
 	stack_topush->topnum = node_topush;
 	stack_toget->size--;
 	stack_topush->size++;
-	ft_putstr_fd("p\n", 1);
+	if (name == 'a')
+		ft_putstr_fd("pa\n", 1);
+	else if (name == 'b')
+		ft_putstr_fd("pb\n", 1);
 }

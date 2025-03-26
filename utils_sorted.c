@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 13:34:21 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/25 17:39:49 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/03/26 13:50:56 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,23 +52,25 @@ int	ft_checksorted(t_stack *a)
 
 void	ft_sortthree(t_stack *stacka)
 {
+	if (ft_checksorted(stacka) == 0)
+		return ;
 	if (stacka->topnum == ft_min(stacka))
 	{
-		ft_swap(stacka);
-		ft_rotate(stacka);
+		ft_swap(stacka, 'a');
+		ft_rotate(stacka, 'a');
 	}
 	else if (stacka->topnum == ft_max(stacka))
 	{
-		ft_rotate(stacka);
+		ft_rotate(stacka, 'a');
 		if (ft_checksorted(stacka) == 1)
-			ft_swap(stacka);
+			ft_swap(stacka, 'a');
 	}
 	else
 	{
 		if (stacka->topnum->next == ft_min(stacka))
-			ft_swap(stacka);
+			ft_swap(stacka, 'a');
 		else
-			ft_reverserotate(stacka);
+			ft_reverserotate(stacka, 'a');
 	}
 }
 
@@ -80,14 +82,34 @@ void	ft_sortfour(t_stack *stacka, t_stack *stackb)
 	if (ft_getpos(min, stacka) >= stacka->size / 2)
 	{
 		while (stacka->topnum != min)
-			ft_reverserotate(stacka);
+			ft_reverserotate(stacka, 'a');
 	}
 	else
 	{
 		while (stacka->topnum != min)
-			ft_rotate(stacka);
+			ft_rotate(stacka, 'a');
 	}
-	ft_push(stacka, stackb);
+	ft_push(stacka, stackb, 'b');
 	ft_sortthree(stacka);
-	ft_push(stackb, stacka);
+	ft_push(stackb, stacka, 'a');
+}
+
+void	ft_sortfive(t_stack *stacka, t_stack *stackb)
+{
+	t_num	*min;
+
+	min = ft_min(stacka);
+	if (ft_getpos(min, stacka) >= stacka->size / 2)
+	{
+		while (stacka->topnum != min)
+			ft_reverserotate(stacka, 'a');
+	}
+	else
+	{
+		while (stacka->topnum != min)
+			ft_rotate(stacka, 'a');
+	}
+	ft_push(stacka, stackb, 'b');
+	ft_sortfour(stacka, stackb);
+	ft_push(stackb, stacka, 'a');
 }
