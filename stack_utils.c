@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 16:54:31 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/25 17:31:30 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/03/29 17:49:27 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,24 @@ int	ft_getpos(t_num *num, t_stack *stack)
 	topnum = stack->topnum;
 	while (topnum)
 	{
+		pos++;
 		if (num == topnum)
 			return (pos);
-		pos++;
 		topnum = topnum->next;
 	}
 	return (-1);
+}
+
+t_num	*ft_getbyindex(t_stack *a, int index)
+{
+	t_num	*num;
+
+	num = a->topnum;
+	while (num)
+	{
+		if (num->index == index)
+			return (num);
+		num = num->next;
+	}
+	return (NULL);
 }

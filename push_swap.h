@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 14:03:46 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/26 13:48:26 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/03/29 18:44:53 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "./libft/libft.h"
+# include <limits.h>
 
 typedef struct s_num
 {
@@ -37,6 +38,7 @@ void	ft_error(int error);
 char	**ft_handleav(char **av, int ac);
 void	ft_free(int ac, char **av2, t_stack *stacka, t_stack *stackb);
 void	ft_freearray(char **av2);
+int		ft_sqrt(int num);
 
 // print.c
 void	ft_printparams(char **av);
@@ -57,6 +59,7 @@ t_num	*ft_getlastnum(t_stack *stack);
 t_num	*ft_min(t_stack *stack);
 t_num	*ft_max(t_stack *stack);
 int		ft_getpos(t_num *num, t_stack *stack);
+t_num	*ft_getbyindex(t_stack *a, int index);
 
 // utils_sorted.c
 void	ft_sortindex(t_stack *stacka);

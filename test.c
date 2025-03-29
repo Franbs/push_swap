@@ -181,3 +181,100 @@ void	ft_sortall(t_stack *a, t_stack *b) {
         ft_push(b, a, 'a');
     }
 }
+
+/*void	ft_sortall(t_stack *a, t_stack *b)
+{
+	t_num	*min;
+
+	while (a->size > 0)
+	{
+		min = ft_min(a);
+		if (ft_getpos(min, a) >= a->size / 2)
+		{
+			while (a->topnum != min)
+				ft_reverserotate(a, 'a');
+		}
+		else
+		{
+			while (a->topnum != min)
+				ft_rotate(a, 'a');
+		}
+		ft_push(a, b, 'b');
+	}
+	while (b->size > 0)
+		ft_push(b, a, 'a');
+}*/
+
+/*void print_chunk(int *chunk, int size) {
+    for (int i = 0; i < size; i++) {
+        printf("%d ", chunk[i]);
+    }
+    printf("\n");
+}
+
+int	*ft_fillchunk(int *chunk, t_stack *a, int chunksize, int start)
+{
+	t_num	*num;
+	int		i;
+	int		end;
+	t_num	*last;
+
+	last = ft_getlastnum(a);
+	num = a->topnum;
+	i = 0;
+	end = chunksize + start;
+	if (end > a->size)
+		end = a->size;
+	while (num && i < chunksize)
+	{
+		if (num->index >= start && num->index < end)
+		{
+			chunk[i] = num->index;
+			i++;
+		}
+		num = num->next;
+	}
+	return (chunk);
+}
+
+t_num	*ft_getcheapernode(int *chunk, t_stack *stack)
+{
+	
+}
+
+void	ft_sortall(t_stack *a, t_stack *b)
+{
+	int		*chunk;
+	int		chunksize;
+	int		start;
+	int		i;
+	t_num	*num;
+
+	chunksize = ft_sqrt(a->size);
+	chunk = malloc(sizeof(int) * chunksize);
+	if (!chunk)
+		return ;
+	start = 0;
+	while (start < a->size)
+	{
+		ft_fillchunk(chunk, a, chunksize, start);
+		print_chunk(chunk, chunksize);
+		while (i < chunksize)
+		{
+			num = ft_getcheapernode(chunk, a);
+			if (ft_getpos(num, a) >= a->size / 2)
+			{
+				while (a->topnum != num)
+					ft_reverserotate(a, 'a');
+			}
+			else
+			{
+				while (a->topnum != num)
+					ft_rotate(a, 'a');
+			}
+			ft_push(a, b, 'b');
+		}
+		start += chunksize;
+	}
+	free(chunk);
+}*/
