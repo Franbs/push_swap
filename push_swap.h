@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 14:03:46 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/29 18:44:53 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/03/30 17:46:25 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,17 @@
 
 # include "./libft/libft.h"
 # include <limits.h>
+
+typedef struct s_moves
+{
+	int	swap;
+	int	rotate;
+	int	reverserotate;
+	int	ss;
+	int	rr;
+	int	rrr;
+	int	total;
+}	t_moves;
 
 typedef struct s_num
 {

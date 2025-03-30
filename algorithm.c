@@ -6,19 +6,29 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 14:08:18 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/29 19:12:21 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/03/30 17:39:33 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*int	ft_calculatecosta(t_stack *a, t_num *num)
+int ft_getrelativesize(t_stack *stack)
+{
+    int size;
+
+    size = 0;
+    if (stack->size % 2 != 0)
+        size = 1;
+    return ((stack->size / 2) + size);
+}
+
+int	ft_calculatecosta(t_stack *a, t_num *num)
 {
 	int	cost;
 
 	if (a->topnum == num)
 		return (0);
-	if (ft_getpos(num, a) > a->size / 2)
+	if (ft_getpos(num, a) > ft_getrelativesize(a))
 		cost = a->size - ft_getpos(num, a) + 1;
 	else
 		cost = ft_getpos(num, a) - 1;
@@ -28,7 +38,7 @@
 int	ft_abs(int num)
 {
 	if (num < 0)
-		return (num * -1);
+		return (-num);
 	return (num);
 }
 
@@ -47,7 +57,7 @@ int	ft_calculatecostb(t_stack *b, t_num *num)
 	{
 		if (b->topnum == max)
 			return (cost);
-		if (ft_getpos(max, b) > b->size / 2)
+		if (ft_getpos(max, b) > ft_getrelativesize(b))
 			cost += b->size - ft_getpos(max, b) + 1;
 	}
 	else
@@ -60,7 +70,7 @@ int	ft_calculatecostb(t_stack *b, t_num *num)
 				tmp = prev;
 			prev = prev->next;
 		}
-		if (ft_getpos(tmp, b) > b->size / 2)
+		if (ft_getpos(tmp, b) > ft_getrelativesize(b))
 			cost += b->size - ft_getpos(tmp, b) + 1;
 	}
 	return (cost);
@@ -73,8 +83,6 @@ void	ft_sortall(t_stack *a, t_stack *b)
 
 	ft_push(a, b, 'b');
 	ft_push(a, b, 'b');
-	//ft_printstacks(a, b);
-	//ft_putnbr_fd(ft_getpos(ft_min(a), a), 1);
 	cost = 0;
 	num = a->topnum;
 	while (num)
@@ -88,9 +96,9 @@ void	ft_sortall(t_stack *a, t_stack *b)
 		ft_putstr_fd("\n", 1);
 		num = num->next;
 	}
-}*/
+}
 
-int ft_abs(int num)
+/*int ft_abs(int num)
 {
     if (num < 0)
         return -num;
@@ -413,7 +421,7 @@ void ft_sortall(t_stack *a, t_stack *b)
         ft_execute_push_back(a, b, best_pos_a, best_pos_b);
     }
     ft_final_rotate(a);
-}
+}*/
 
 void	ft_sort(t_stack *a, t_stack *b)
 {
@@ -428,5 +436,5 @@ void	ft_sort(t_stack *a, t_stack *b)
 		ft_sortfive(a, b);
 	else
 		ft_sortall(a, b);
-	ft_printstacks(a, b);
+	//ft_printstacks(a, b);
 }
