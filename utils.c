@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 14:59:03 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/29 14:33:12 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/04/01 14:30:32 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,16 @@ void	ft_free(int ac, char **av2, t_stack *stacka, t_stack *stackb)
 
 int	ft_sqrt(int num)
 {
-	int	i;
+	double	x;
+	double	epsilon;
 
 	if (num < 0)
 		return (-1);
-	double x = num;
-    double epsilon = 0.0001;
-    while ((x * x - num) > epsilon || (num - x * x) > epsilon) {
-        x = (x + num / x) / 2;
-    }
-    return (int)x;
+	x = num;
+	epsilon = 0.0001;
+	while ((x * x - num) > epsilon || (num - x * x) > epsilon)
+	{
+		x = (x + num / x) / 2;
+	}
+	return ((int)x);
 }
