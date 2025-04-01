@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 14:08:18 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/04/01 17:02:24 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/04/01 17:06:30 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,5 +106,4 @@ void	ft_sort(t_stack *a, t_stack *b)
 		ft_sortfive(a, b);
 	else
 		ft_sortall(a, b);
-	//ft_printstacks(a, b);
 }
