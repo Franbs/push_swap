@@ -30,10 +30,13 @@ BONUS_OBJ = $(BONUS:.c=.o)
 
 all: $(NAME)
 
+%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
+
 $(NAME): $(SRC_OBJ) Makefile
 	ar rcs $(NAME) $(SRC_OBJ)
 
-bonus: $(OBJ) $(BONUS_OBJ)
+bonus: $(SRC_OBJ) $(BONUS_OBJ)
 	ar rcs $(NAME) $(BONUS_OBJ)
 
 clean:

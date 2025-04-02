@@ -6,7 +6,7 @@
 #    By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/16 12:36:38 by fbanzo-s          #+#    #+#              #
-#    Updated: 2025/04/02 18:19:29 by fbanzo-s         ###   ########.fr        #
+#    Updated: 2025/04/02 18:45:28 by fbanzo-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,31 +37,33 @@ BONUS_OBJ = $(BONUS_SRC:.c=.o)
 all: $(NAME)
 
 $(LIBFT):
-	@echo "$(YELLOW)Compilando libft..."
+	@echo "$(YELLOW)Compilando libft...$(RESET)"
 	@make -C $(LIBFT_DIR) --no-print-directory
 	@make -C $(LIBFT_DIR) bonus --no-print-directory
-	@echo "$(GREEN)Hecho"
+	@echo "$(GREEN)Hecho$(RESET)"
 
 %.o: %.c $(HEADER)
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(NAME): $(LIBFT) $(OBJ) $(OBJ_MAIN)
-	@echo "Compilando $@..."
+	@echo "$(YELLOW)Compilando $@...$(RESET)"
 	$(CC) $(CFLAGS) $(OBJ) $(OBJ_MAIN) -L$(LIBFT_DIR) -lft -o $@
+	@echo "$(GREEN)Hecho$(RESET)"
 
 $(BONUS): $(LIBFT) $(OBJ) $(BONUS_OBJ)
-	@echo "Compilando $@..."
+	@echo "$(YELLOW)Compilando $@...$(RESET)"
 	$(CC) $(CFLAGS) $(BONUS_OBJ) $(OBJ) -L$(LIBFT_DIR) -lft -o $@
+	@echo "$(GREEN)Hecho$(RESET)"
 
 bonus: $(BONUS)
 
 clean:
-	@echo "Limpiando objetos..."
+	@echo "$(RED)Limpiando objetos...$(RESET)"
 	@make -C $(LIBFT_DIR) clean --no-print-directory
 	@rm -f $(OBJ) $(OBJ_MAIN) $(BONUS_OBJ)
 
 fclean: clean
-	@echo "Limpiando todo..."
+	@echo "$(RED)Limpiando todo...$(RESET)"
 	@make -C $(LIBFT_DIR) fclean --no-print-directory
 	@rm -f $(NAME) $(BONUS)
 
