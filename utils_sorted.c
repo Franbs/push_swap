@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 13:34:21 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/26 13:50:56 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/04/03 15:36:45 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	ft_sortfour(t_stack *stacka, t_stack *stackb)
 	t_num	*min;
 
 	min = ft_min(stacka);
-	if (ft_getpos(min, stacka) >= stacka->size / 2)
+	if (ft_getpos(min, stacka) > ft_getrelativesize(stacka))
 	{
 		while (stacka->topnum != min)
 			ft_reverserotate(stacka, 'a');
@@ -89,9 +89,12 @@ void	ft_sortfour(t_stack *stacka, t_stack *stackb)
 		while (stacka->topnum != min)
 			ft_rotate(stacka, 'a');
 	}
-	ft_push(stacka, stackb, 'b');
-	ft_sortthree(stacka);
-	ft_push(stackb, stacka, 'a');
+	if (ft_checksorted(stacka) == 1)
+	{
+		ft_push(stacka, stackb, 'b');
+		ft_sortthree(stacka);
+		ft_push(stackb, stacka, 'a');
+	}
 }
 
 void	ft_sortfive(t_stack *stacka, t_stack *stackb)
@@ -99,7 +102,7 @@ void	ft_sortfive(t_stack *stacka, t_stack *stackb)
 	t_num	*min;
 
 	min = ft_min(stacka);
-	if (ft_getpos(min, stacka) >= stacka->size / 2)
+	if (ft_getpos(min, stacka) > ft_getrelativesize(stacka))
 	{
 		while (stacka->topnum != min)
 			ft_reverserotate(stacka, 'a');
@@ -109,7 +112,10 @@ void	ft_sortfive(t_stack *stacka, t_stack *stackb)
 		while (stacka->topnum != min)
 			ft_rotate(stacka, 'a');
 	}
-	ft_push(stacka, stackb, 'b');
-	ft_sortfour(stacka, stackb);
-	ft_push(stackb, stacka, 'a');
+	if (ft_checksorted(stacka) == 1)
+	{
+		ft_push(stacka, stackb, 'b');
+		ft_sortfour(stacka, stackb);
+		ft_push(stackb, stacka, 'a');
+	}
 }

@@ -6,7 +6,7 @@
 #    By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/16 12:36:38 by fbanzo-s          #+#    #+#              #
-#    Updated: 2025/04/02 18:45:28 by fbanzo-s         ###   ########.fr        #
+#    Updated: 2025/04/03 15:05:05 by fbanzo-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ NAME = push_swap
 BONUS = checker
 HEADER = push_swap.h
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 INCLUDES = -I$(LIBFT_DIR) -I.
 LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a
@@ -45,12 +45,12 @@ $(LIBFT):
 %.o: %.c $(HEADER)
 	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-$(NAME): $(LIBFT) $(OBJ) $(OBJ_MAIN)
+$(NAME): $(LIBFT) $(OBJ) $(OBJ_MAIN) Makefile
 	@echo "$(YELLOW)Compilando $@...$(RESET)"
 	$(CC) $(CFLAGS) $(OBJ) $(OBJ_MAIN) -L$(LIBFT_DIR) -lft -o $@
 	@echo "$(GREEN)Hecho$(RESET)"
 
-$(BONUS): $(LIBFT) $(OBJ) $(BONUS_OBJ)
+$(BONUS): $(LIBFT) $(OBJ) $(BONUS_OBJ) Makefile
 	@echo "$(YELLOW)Compilando $@...$(RESET)"
 	$(CC) $(CFLAGS) $(BONUS_OBJ) $(OBJ) -L$(LIBFT_DIR) -lft -o $@
 	@echo "$(GREEN)Hecho$(RESET)"

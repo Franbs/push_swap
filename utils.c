@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 14:59:03 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/04/01 14:30:32 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/04/03 15:40:49 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_error(int error)
 char	**ft_handleav(char **av, int ac)
 {
 	char	**av2;
+	int		i;
 
 	if (ac == 2)
 		av2 = ft_split(av[1], ' ');
@@ -31,6 +32,13 @@ char	**ft_handleav(char **av, int ac)
 	{
 		av++;
 		av2 = av;
+	}
+	i = 1;
+	while (av[i])
+	{
+		if (ft_strlen(av[i]) > 11)
+			ft_error(1);
+		i++;
 	}
 	return (av2);
 }
