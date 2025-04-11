@@ -19,6 +19,7 @@
 # include <string.h>
 # include <stdio.h>
 # include "../push_swap.h"
+# include "get_next_line.h"
 
 typedef struct s_list
 {

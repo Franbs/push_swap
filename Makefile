@@ -6,7 +6,7 @@
 #    By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/16 12:36:38 by fbanzo-s          #+#    #+#              #
-#    Updated: 2025/04/11 12:32:39 by fbanzo-s         ###   ########.fr        #
+#    Updated: 2025/04/11 13:46:16 by fbanzo-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,10 +37,8 @@ BONUS_OBJ = $(BONUS_SRC:.c=.o)
 all: $(NAME)
 
 $(LIBFT):
-	@echo "$(YELLOW)Compilando libft...$(RESET)"
 	@make -C $(LIBFT_DIR) --no-print-directory
 	@make -C $(LIBFT_DIR) bonus --no-print-directory
-	@echo "$(GREEN)Hecho$(RESET)"
 
 %.o: %.c $(HEADER)
 	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
