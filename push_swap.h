@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 14:03:46 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/04/11 12:44:29 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/04/11 22:17:58 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	ft_freearray(char **av2);
 int		ft_getrelativesize(t_stack *stack);
 void	ft_debug_moves(t_moves moves, t_num *num);
 int		ft_sqrt(int num);
+int		ft_isempty(t_stack *stack);
 // print.c
 void	ft_printparams(char **av);
 void	ft_printstack(t_stack *stack);
@@ -78,14 +79,15 @@ void	ft_sortfive(t_stack *stacka, t_stack *stackb);
 // algorithm.c
 void	ft_sort(t_stack *stacka, t_stack *stackb);
 // operations.c
-void	ft_swap(t_stack *stack, char name);
-void	ft_rotate(t_stack *stack, char name);
-void	ft_reverserotate(t_stack *stack, char name);
-void	ft_push(t_stack *stacktoget, t_stack *stacktopush, char name);
+void	ft_swap(t_stack *stack, char name, int print);
+void	ft_rotate(t_stack *stack, char name, int print);
+void	ft_reverserotate(t_stack *stack, char name, int print);
+void	ft_push(t_stack *stacktoget, t_stack *stacktopush, char name,
+			int print);
 // operations2.c
-void	ft_ss(t_stack *stacka, t_stack *stackb);
-void	ft_rr(t_stack *stacka, t_stack *stackb);
-void	ft_rrr(t_stack *stacka, t_stack *stackb);
+void	ft_ss(t_stack *stacka, t_stack *stackb, int print);
+void	ft_rr(t_stack *stacka, t_stack *stackb, int print);
+void	ft_rrr(t_stack *stacka, t_stack *stackb, int print);
 // calculate_costs.c
 t_moves	ft_calculatecosts(t_moves moves);
 t_moves	ft_calculatecostb(t_stack *b, t_num *num, t_moves moves);

@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 13:34:21 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/04/03 15:36:45 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/04/11 17:28:00 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,21 +56,21 @@ void	ft_sortthree(t_stack *stacka)
 		return ;
 	if (stacka->topnum == ft_min(stacka))
 	{
-		ft_swap(stacka, 'a');
-		ft_rotate(stacka, 'a');
+		ft_swap(stacka, 'a', 0);
+		ft_rotate(stacka, 'a', 0);
 	}
 	else if (stacka->topnum == ft_max(stacka))
 	{
-		ft_rotate(stacka, 'a');
+		ft_rotate(stacka, 'a', 0);
 		if (ft_checksorted(stacka) == 1)
-			ft_swap(stacka, 'a');
+			ft_swap(stacka, 'a', 0);
 	}
 	else
 	{
 		if (stacka->topnum->next == ft_min(stacka))
-			ft_swap(stacka, 'a');
+			ft_swap(stacka, 'a', 0);
 		else
-			ft_reverserotate(stacka, 'a');
+			ft_reverserotate(stacka, 'a', 0);
 	}
 }
 
@@ -82,18 +82,18 @@ void	ft_sortfour(t_stack *stacka, t_stack *stackb)
 	if (ft_getpos(min, stacka) > ft_getrelativesize(stacka))
 	{
 		while (stacka->topnum != min)
-			ft_reverserotate(stacka, 'a');
+			ft_reverserotate(stacka, 'a', 0);
 	}
 	else
 	{
 		while (stacka->topnum != min)
-			ft_rotate(stacka, 'a');
+			ft_rotate(stacka, 'a', 0);
 	}
 	if (ft_checksorted(stacka) == 1)
 	{
-		ft_push(stacka, stackb, 'b');
+		ft_push(stacka, stackb, 'b', 0);
 		ft_sortthree(stacka);
-		ft_push(stackb, stacka, 'a');
+		ft_push(stackb, stacka, 'a', 0);
 	}
 }
 
@@ -105,17 +105,17 @@ void	ft_sortfive(t_stack *stacka, t_stack *stackb)
 	if (ft_getpos(min, stacka) > ft_getrelativesize(stacka))
 	{
 		while (stacka->topnum != min)
-			ft_reverserotate(stacka, 'a');
+			ft_reverserotate(stacka, 'a', 0);
 	}
 	else
 	{
 		while (stacka->topnum != min)
-			ft_rotate(stacka, 'a');
+			ft_rotate(stacka, 'a', 0);
 	}
 	if (ft_checksorted(stacka) == 1)
 	{
-		ft_push(stacka, stackb, 'b');
+		ft_push(stacka, stackb, 'b', 0);
 		ft_sortfour(stacka, stackb);
-		ft_push(stackb, stacka, 'a');
+		ft_push(stackb, stacka, 'a', 0);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/01 16:05:59 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/04/11 12:44:09 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/04/11 22:17:41 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,12 @@ int	ft_sqrt(int num)
 		x = (x + num / x) / 2;
 	}
 	return ((int)x);
+}
+
+int	ft_isempty(t_stack *stack)
+{
+	if (stack->size > 0)
+		return (1);
+	else
+		return (0);
 }

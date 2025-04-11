@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 14:08:18 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/04/01 17:06:30 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/04/11 17:24:09 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,37 +16,37 @@ void	ft_executemoves2(t_stack *a, t_stack *b, t_moves moves)
 {
 	while (moves.ra > 0)
 	{
-		ft_rotate(a, 'a');
+		ft_rotate(a, 'a', 0);
 		moves.ra--;
 	}
 	while (moves.rb > 0)
 	{
-		ft_rotate(b, 'b');
+		ft_rotate(b, 'b', 0);
 		moves.rb--;
 	}
 	while (moves.rra > 0)
 	{
-		ft_reverserotate(a, 'a');
+		ft_reverserotate(a, 'a', 0);
 		moves.rra--;
 	}
 	while (moves.rrb > 0)
 	{
-		ft_reverserotate(b, 'b');
+		ft_reverserotate(b, 'b', 0);
 		moves.rrb--;
 	}
-	ft_push(a, b, 'b');
+	ft_push(a, b, 'b', 0);
 }
 
 void	ft_executemoves(t_stack *a, t_stack *b, t_moves moves)
 {
 	while (moves.rr > 0)
 	{
-		ft_rr(a, b);
+		ft_rr(a, b, 0);
 		moves.rr--;
 	}
 	while (moves.rrr > 0)
 	{
-		ft_rrr(a, b);
+		ft_rrr(a, b, 0);
 		moves.rrr--;
 	}
 }
@@ -58,10 +58,10 @@ void	ft_sortb(t_stack *b)
 	topnum = ft_max(b);
 	if (ft_getpos(topnum, b) > ft_getrelativesize(b) && b->size != 2)
 		while (b->topnum != topnum)
-			ft_reverserotate(b, 'b');
+			ft_reverserotate(b, 'b', 0);
 	else
 		while (b->topnum != topnum)
-			ft_rotate(b, 'b');
+			ft_rotate(b, 'b', 0);
 }
 
 void	ft_sortall(t_stack *a, t_stack *b)
@@ -73,8 +73,8 @@ void	ft_sortall(t_stack *a, t_stack *b)
 	if (!a || !b)
 		return ;
 	original_size = a->size;
-	ft_push(a, b, 'b');
-	ft_push(a, b, 'b');
+	ft_push(a, b, 'b', 0);
+	ft_push(a, b, 'b', 0);
 	i = 0;
 	while (i < original_size - 2)
 	{
@@ -88,7 +88,7 @@ void	ft_sortall(t_stack *a, t_stack *b)
 	i = 0;
 	while (i < original_size)
 	{
-		ft_push(b, a, 'a');
+		ft_push(b, a, 'a', 0);
 		i++;
 	}
 }
@@ -97,7 +97,7 @@ void	ft_sort(t_stack *a, t_stack *b)
 {
 	ft_sortindex(a);
 	if (a->size == 2)
-		ft_swap(a, 'a');
+		ft_swap(a, 'a', 0);
 	else if (a->size == 3)
 		ft_sortthree(a);
 	else if (a->size == 4)
