@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 14:03:37 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/03/26 13:42:41 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/04/11 12:34:34 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		return (0);
 	av2 = ft_handleav(av, ac);
+	if (!av2)
+		return (0);
 	error = ft_checkstack(av2);
 	ft_error(error);
 	stacka = ft_createstack();

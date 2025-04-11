@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 14:59:03 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/04/03 15:40:49 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/04/11 12:46:28 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,34 @@ void	ft_error(int error)
 	}
 }
 
+char	**ft_handletwoac(char **av)
+{
+	char	**av2;
+
+	av2 = ft_split(av[1], ' ');
+	if (!av2)
+		ft_error(1);
+	if (av2[0] == NULL)
+	{
+		free(av2);
+		return (NULL);
+	}
+	return (av2);
+}
+
 char	**ft_handleav(char **av, int ac)
 {
 	char	**av2;
 	int		i;
 
 	if (ac == 2)
-		av2 = ft_split(av[1], ' ');
+		av2 = ft_handletwoac(av);
 	else
 	{
 		av++;
 		av2 = av;
 	}
-	i = 1;
+	i = 0;
 	while (av[i])
 	{
 		if (ft_strlen(av[i]) > 11)
@@ -62,20 +77,4 @@ void	ft_free(int ac, char **av2, t_stack *stacka, t_stack *stackb)
 		ft_freearray(av2);
 	ft_freestack(stacka);
 	ft_freestack(stackb);
-}
-
-int	ft_sqrt(int num)
-{
-	double	x;
-	double	epsilon;
-
-	if (num < 0)
-		return (-1);
-	x = num;
-	epsilon = 0.0001;
-	while ((x * x - num) > epsilon || (num - x * x) > epsilon)
-	{
-		x = (x + num / x) / 2;
-	}
-	return ((int)x);
 }

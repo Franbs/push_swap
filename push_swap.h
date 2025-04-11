@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 14:03:46 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/04/01 16:37:09 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/04/11 12:44:29 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ void	ft_error(int error);
 char	**ft_handleav(char **av, int ac);
 void	ft_free(int ac, char **av2, t_stack *stacka, t_stack *stackb);
 void	ft_freearray(char **av2);
-int		ft_sqrt(int num);
 // utils2.c
 int		ft_getrelativesize(t_stack *stack);
 void	ft_debug_moves(t_moves moves, t_num *num);
+int		ft_sqrt(int num);
 // print.c
 void	ft_printparams(char **av);
 void	ft_printstack(t_stack *stack);

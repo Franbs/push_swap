@@ -38,7 +38,7 @@ int	ft_checkdup(char **list)
 		j = i + 1;
 		while (list[j])
 		{
-			if (ft_strncmp(list[i], list[j], 11) == 0)
+			if (ft_atoi(list[i]) == ft_atoi(list[j]))
 				return (1);
 			j++;
 		}
