@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 17:21:01 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/04/11 22:17:33 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/04/12 12:49:03 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,32 +30,32 @@ void	ft_rmnewline(char *line)
 
 int	ft_execmoves(t_stack *a, t_stack *b, char *line)
 {
-	if (ft_strncmp(line, "sa", ft_strlen(line)) == 0)
+	if (ft_strncmp(line, "sa", 2) == 0 && (line[2] == '\0' || line[2] == '\n'))
 		return (ft_swap(a, 'a', 1), 1);
-	else if (ft_strncmp(line, "sb", ft_strlen(line)) == 0)
+	else if (ft_strncmp(line, "sb", 2) == 0 && (line[2] == '\0' || line[2] == '\n'))
 		return (ft_swap(b, 'b', 1), 1);
-	else if (ft_strncmp(line, "pa", ft_strlen(line)) == 0)
+	else if (ft_strncmp(line, "pa", 2) == 0 && (line[2] == '\0' || line[2] == '\n'))
 		return (ft_push(b, a, 'a', 1), 1);
-	else if (ft_strncmp(line, "pb", ft_strlen(line)) == 0)
+	else if (ft_strncmp(line, "pb", 2) == 0 && (line[2] == '\0' || line[2] == '\n'))
 		return (ft_push(a, b, 'b', 1), 1);
-	else if (ft_strncmp(line, "ra", ft_strlen(line)) == 0)
+	else if (ft_strncmp(line, "ra", 2) == 0 && (line[2] == '\0' || line[2] == '\n'))
 		return (ft_rotate(a, 'a', 1), 1);
-	else if (ft_strncmp(line, "rb", ft_strlen(line)) == 0)
+	else if (ft_strncmp(line, "rb", 2) == 0 && (line[2] == '\0' || line[2] == '\n'))
 		return (ft_rotate(b, 'b', 1), 1);
-	else if (ft_strncmp(line, "rra", ft_strlen(line)) == 0)
+	else if (ft_strncmp(line, "rra", 3) == 0 && (line[3] == '\0' || line[3] == '\n'))
 		return (ft_reverserotate(a, 'a', 1), 1);
-	else if (ft_strncmp(line, "rrb", ft_strlen(line)) == 0)
+	else if (ft_strncmp(line, "rrb", 3) == 0 && (line[3] == '\0' || line[3] == '\n'))
 		return (ft_reverserotate(b, 'b', 1), 1);
 	return (0);
 }
 
 int	ft_execmoves2(t_stack *a, t_stack *b, char *line)
 {
-	if (ft_strncmp(line, "rrr", ft_strlen(line)) == 0)
+	if (ft_strncmp(line, "rrr", 3) == 0 && (line[3] == '\0' || line[3] == '\n'))
 		return (ft_rrr(a, b, 1), 1);
-	else if (ft_strncmp(line, "rr", ft_strlen(line)) == 0)
+	else if (ft_strncmp(line, "rr", 2) == 0 && (line[2] == '\0' || line[2] == '\n'))
 		return (ft_rr(a, b, 1), 1);
-	else if (ft_strncmp(line, "ss", ft_strlen(line)) == 0)
+	else if (ft_strncmp(line, "ss", 2) == 0 && (line[2] == '\0' || line[2] == '\n'))
 		return (ft_ss(a, b, 1), 1);
 	return (0);
 }

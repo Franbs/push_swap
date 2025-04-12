@@ -6,7 +6,7 @@
 /*   By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 14:59:03 by fbanzo-s          #+#    #+#             */
-/*   Updated: 2025/04/11 12:46:28 by fbanzo-s         ###   ########.fr       */
+/*   Updated: 2025/04/12 12:21:26 by fbanzo-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,20 @@ char	**ft_handleav(char **av, int ac)
 	int		i;
 
 	if (ac == 2)
+	{
 		av2 = ft_handletwoac(av);
+		if (!av2)
+			ft_error(1);
+	}
 	else
 	{
 		av++;
 		av2 = av;
 	}
 	i = 0;
-	while (av[i])
+	while (av2[i])
 	{
-		if (ft_strlen(av[i]) > 11)
+		if (ft_strlen(av2[i]) > 11)
 			ft_error(1);
 		i++;
 	}
