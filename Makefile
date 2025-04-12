@@ -6,7 +6,7 @@
 #    By: fbanzo-s <fbanzo-s@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/16 12:36:38 by fbanzo-s          #+#    #+#              #
-#    Updated: 2025/04/11 16:37:20 by fbanzo-s         ###   ########.fr        #
+#    Updated: 2025/04/12 13:19:20 by fbanzo-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ NAME = push_swap
 BONUS = checker
 HEADER = push_swap.h
 CC = cc
-#CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 INCLUDES = -I$(LIBFT_DIR) -I.
 LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a
